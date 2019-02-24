@@ -7,11 +7,17 @@
 <body>
   <h1><a href="index.html">WEB</a></h1>
   <input type="button" value="night" onclick="
-  document.querySelector('body').style.backgroundColor='black';
-  document.querySelector('body').style.color='white';">
-  <input type="button" value="white" onclick="
-  document.querySelector('body').style.backgroundColor='white';
-  document.querySelector('body').style.color='black';">
+    var target = document.querySelector('body');
+    if (this.value === 'night') {
+      this.value = 'day';
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+    } else {
+      this.value = 'night';
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+    }
+  ">
   <ol>
     <li><a href="1.html">HTML</a></li>
     <li><a href="2.html">CSS</a></li>
