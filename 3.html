@@ -8,7 +8,11 @@
   <h1><a href="index.html">WEB</a></h1>
   <input type="button" value="night" onclick="
     var target = document.querySelector('body');
+    var alink_list = document.querySelectorAll('a');
+    var night = false;
+
     if (this.value === 'night') {
+      night = true;
       this.value = 'day';
       target.style.backgroundColor = 'black';
       target.style.color = 'white';
@@ -16,6 +20,14 @@
       this.value = 'night';
       target.style.backgroundColor = 'white';
       target.style.color = 'black';
+    }
+
+    for (var i = 0; i < alink_list.length; ++i) {
+      if (night) {
+        alink_list[i].style.color = 'powderblue';
+      } else {
+        alink_list[i].style.color = 'blue';
+      }
     }
   ">
   <ol>
